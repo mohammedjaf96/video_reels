@@ -1,17 +1,16 @@
-# live location plus
+# Video reels
 
-A powerful and easy-to-use package for real-time location tracking in Flutter applications. live_location_plus helps developers efficiently manage foreground and background location updates with optimized performance.
+View videos in smooth vertical.
 
 ![Logo](https://storage.googleapis.com/cms-storage-bucket/847ae81f5430402216fd.svg)
 
 
 ## Features
 
-✅ Get current location  
-✅ Enable live location updates (foreground & background)  
-✅ Efficient battery optimization  
-✅ Easy integration with iod/android
-✅ Automatic location permission handling
+✅ Display videos in a smooth column with measurement  
+✅ Blocking two new videos and preparing them for display to speed up the playback process  
+✅ Accurate memory control  
+✅ Add dedicated spaces
 
 
 ## Installation
@@ -20,20 +19,9 @@ A powerful and easy-to-use package for real-time location tracking in Flutter ap
 No additional setup is required.
 
 ### iOS
-To enable background location updates, add the following to your **Info.plist** file:
+No additional setup is required.
 
-```xml
-<key>UIBackgroundModes</key>
-<array>
-    <string>location</string>
-    <string>processing</string>
-</array>
-<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-<string>write your description to using location</string>
-<key>NSLocationAlwaysUsageDescription</key>
-<string>write your description to using location</string>
-<key>NSLocationWhenInUseUsageDescription</key>
-<string>write your description to using location</string>
+
 
 
 
@@ -42,11 +30,11 @@ To enable background location updates, add the following to your **Info.plist** 
 
 ```
 dependencies:
-live_location_plus:
+video_reels:
 
 ```
 
-import 'package:live_location_plus/live_location_plus.dart';
+import 'package:video_reels/video_reels.dart';
 ```
 
 ## Usage/Examples
@@ -54,20 +42,17 @@ import 'package:live_location_plus/live_location_plus.dart';
 ```dart
 import 'package:live_location_plus/live_location_plus.dart';
 
-void main() {
-  LocationService locationService = LocationService();
-
-  locationService.init(
-    currentLocation: true,
-    foregroundLiveLocation: true,
-    backgroundLiveLocation: false,
-  );
-
-
-  locationService.locationStream.listen((position) {
-    print("New Location: ${position.currentLocation.latitude}, ${position.currentLocation.longitude}");
-  });
-}
+return Scaffold(
+        body: ReelsPlayer(
+          urls: // list of url => RxList<String> ,
+          animatedIcon: true,
+          leftSideChild: ,
+          rightSideChild: ,
+          loadingWidget: ,
+          iconColor: ,
+          bottomChild: ,
+        ),
+      );
 ```
 
 
