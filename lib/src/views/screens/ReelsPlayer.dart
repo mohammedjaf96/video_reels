@@ -38,6 +38,7 @@ class _ReelsPlayerState extends State<ReelsPlayer> with SingleTickerProviderStat
   int currentIndex = 0;
   late AnimationController iconController;
   List<String> get videoUrls => widget.urls;
+  bool viewIcon = false;
 
   @override
   void initState() {
@@ -95,16 +96,27 @@ class _ReelsPlayerState extends State<ReelsPlayer> with SingleTickerProviderStat
     }
   }
 
-  void _togglePlay(int index) {
+  Future<void> _togglePlay(int index) async {
+    setState(() {
+      viewIcon = true;
+    });
     final controller = controllers[index];
     if (controller == null) return;
 
     if (controller.value.isPlaying) {
       controller.pause();
       iconController.reverse();
+      await Future.delayed(Duration(milliseconds: 500));
+      setState(() {
+        viewIcon = false;
+      });
     } else {
       controller.play();
       iconController.forward();
+      await Future.delayed(Duration(milliseconds: 500));
+      setState(() {
+        viewIcon = false;
+      });
     }
   }
 
@@ -193,7 +205,7 @@ class _ReelsPlayerState extends State<ReelsPlayer> with SingleTickerProviderStat
                   ),
                 ),
 
-              if(widget.animatedIcon ?? false)
+              if((widget.animatedIcon ?? false) && viewIcon)
                 Align(
                   alignment: Alignment.center,
                   child: IconButton(
