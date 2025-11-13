@@ -37,7 +37,7 @@ class _ReelsPlayerState extends State<ReelsPlayer> with SingleTickerProviderStat
   final Map<int, VideoPlayerController> controllers = {};
   int currentIndex = 0;
   late AnimationController iconController;
-  List<String> get videoUrls => widget.urls.value;
+  List<String> get videoUrls => widget.urls;
 
   @override
   void initState() {
