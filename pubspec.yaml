@@ -11,8 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  get:
-  video_player:
+  get: ^4.7.2
+  video_player: ^2.10.1
 
 dev_dependencies:
   flutter_test:
