@@ -34,13 +34,12 @@ video_reels:
 
 ```
 
-import 'package:video_reels/video_reels.dart';
-```
+
 
 ## Usage/Examples
 
 ```dart
-import 'package:live_location_plus/live_location_plus.dart';
+import 'package:video_reels/video_reels.dart';
 
 return Scaffold(
         body: ReelsPlayer(

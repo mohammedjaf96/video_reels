@@ -5,3 +5,7 @@
 
 ## 0.0.2
 - Fixed dependencies issue with `get` and `video_player`
+
+
+## 0.0.2
+- Fixed dependencies issue with `get` and `video_player`
